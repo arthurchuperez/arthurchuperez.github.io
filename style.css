@@ -6,11 +6,39 @@ body {
     background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
+    overflow-y: scroll;
 }
 
 * {
     box-sizing: border-box;
     transition: all 0.3s ease;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    font-size: 2em;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff8c00, #8a2be2);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+h4 {
+    color: #ff8c00;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-align: left;
 }
 
 /* En-tête */
@@ -152,25 +180,6 @@ nav ul li {
     margin: 0 auto;
 }
 
-#about h2 {
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
-    font-size: 2em;
-}
-
-#about h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #ff8c00, #8a2be2);
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -278,12 +287,12 @@ footer {
     .about-container {
         grid-template-columns: 1fr;
     }
-    
+
     .btn-container {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 15px;
@@ -292,9 +301,13 @@ footer {
 
 /* Page des projets */
 #projects {
-    padding: 60px 20px;
+    padding: 0px 20px 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
+}
+#projects .tag {
+    font-style: italic;
 }
 
 .projects-grid {
@@ -338,16 +351,17 @@ footer {
 
 /* Page des compétences */
 #skills {
-    padding: 60px 20px;
+    padding: 0px 20px 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .skill-card {
@@ -357,10 +371,19 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* important si utilisé dans une grille */
+    padding: 20px;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+}
+
+.skill-bar {
+    margin-bottom: 8px;
 }
 
 .skill-icon {
@@ -371,7 +394,7 @@ footer {
 
 /* Page de contact */
 #contact {
-    padding: 60px 20px;
+    padding: 0px 20px 20px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -383,53 +406,6 @@ footer {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     margin-top: 30px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1em;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #8a2be2;
-    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
-}
-
-textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background: linear-gradient(90deg, #ff8c00, #8a2be2);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
 }
 
 .contact-info {
@@ -444,7 +420,15 @@ textarea {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    container-type: inline-size;
 }
+
+@container (max-width: 240px) {
+    .contact-item .mail {
+        margin-left: -8px;
+    }
+}
+
 
 .contact-icon {
     font-size: 2em;
@@ -454,64 +438,12 @@ textarea {
 
 /* Page de veille technologique */
 #veille {
-    padding: 60px 20px;
+    padding: 0px 20px 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.veille-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.veille-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.veille-img {
-    height: 200px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    color: #8a2be2;
-}
-
-.veille-content {
-    padding: 25px;
-}
-
-.veille-date {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.veille-content h3 {
-    margin-top: 0;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 15px;
-    color: #8a2be2;
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-}
-
-.read-more:hover {
-    border-bottom-color: #8a2be2;
-}
-
-/* Styles supplémentaires pour la page de veille technologique */
 .intro {
     text-align: center;
     max-width: 800px;
@@ -520,10 +452,10 @@ textarea {
 }
 
 .veille-article {
+    text-align: left;
     background-color: white;
     border-radius: 10px;
     padding: 30px;
-    margin-bottom: 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -535,19 +467,13 @@ textarea {
 }
 
 .veille-date {
+    font-size: 0.9em;
     color: #666;
-    margin-bottom: 20px;
-    font-style: italic;
+    margin-bottom: 10px;
 }
 
 .veille-section {
     margin-bottom: 25px;
-}
-
-.veille-section h4 {
-    color: #ff8c00;
-    margin-bottom: 15px;
-    font-size: 1.3em;
 }
 
 .veille-section ul {
@@ -558,30 +484,9 @@ textarea {
     margin-bottom: 10px;
 }
 
-.other-veilles h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.other-veilles h3:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #ff8c00, #8a2be2);
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
 
 @media (max-width: 768px) {
     .veille-article {
         padding: 20px;
-    }
-    
-    .veille-grid {
-        grid-template-columns: 1fr;
     }
 }
