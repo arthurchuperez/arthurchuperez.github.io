@@ -4,6 +4,7 @@
     background: linear-gradient(45deg, #ff8c00, #8a2be2);
     color: white;
     display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -69,13 +70,6 @@
 }
 
 /* Section À propos */
-#about {
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
