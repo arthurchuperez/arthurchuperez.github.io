@@ -123,23 +123,6 @@
     border-radius: 6px;
 }
 
-.btn-small {
-    display: inline-block;
-    background-color: transparent;
-    color: #8a2be2;
-    padding: 8px 15px;
-    text-decoration: none;
-    border: 2px solid #8a2be2;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-small:hover {
-    background-color: #8a2be2;
-    color: white;
-}
-
 @media (max-width: 800px) {
     .about-container {
         grid-template-columns: 1fr;

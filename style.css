@@ -156,3 +156,20 @@ nav ul li {
     margin: 0 auto 40px;
     font-size: 1.1em;
 }
+
+.btn-small {
+    display: inline-block;
+    background-color: transparent;
+    color: #8a2be2;
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 2px solid #8a2be2;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: #8a2be2;
+    color: white;
+}

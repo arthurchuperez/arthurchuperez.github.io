@@ -38,5 +38,10 @@
 }
 
 .skill-bar {
+    height: 12px;
+    background-color: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 5px;
     margin-bottom: 8px;
 }
