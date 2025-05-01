@@ -83,10 +83,6 @@ header h1 {
     display: none;
 }
 
-nav {
-    margin-top: 20px;
-}
-
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -110,6 +106,10 @@ nav {
     nav.show {
         display: flex;
     }
+}
+
+nav {
+    margin-top: 20px;
 }
 
 nav ul {
