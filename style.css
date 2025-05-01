@@ -59,8 +59,51 @@ header h1 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hamburger .fa-bars,
+.hamburger .fa-xmark {
+    vertical-align: bottom;
+    width: 30px;
+}
+.hamburger .fa-xmark {
+    display: none;
+}
+
 nav {
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hamburger .fa-bars.hide {
+        display: none;
+    }
+
+    .hamburger .fa-xmark.show,
+    nav.show {
+        display: flex;
+    }
 }
 
 nav ul {
@@ -306,6 +349,7 @@ footer {
     margin: 0 auto;
     text-align: center;
 }
+
 #projects .tag {
     font-style: italic;
 }
@@ -374,7 +418,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* important si utilisé dans une grille */
+    height: 100%;
+    /* important si utilisé dans une grille */
     padding: 20px;
 }
 
