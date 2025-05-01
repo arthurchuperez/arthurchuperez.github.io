@@ -1,18 +1,6 @@
 ---
 layout: default
 ---
-<section class="hero">
-    <div class="hero-content">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>Découvrez mes compétences, mes projets et mon parcours en BTS SIO SISR.</p>
-        <div class="btn-container">
-            <a href="competences.html" class="btn"><i class="fas fa-tasks"></i> Mes compétences</a>
-            <a href="projets.html" class="btn"><i class="fas fa-laptop-code"></i> Voir mes projets</a>
-            <a href="static/CV_2025-20-05_Arthur_Perez.pdf" class="btn" target="_blank"><i class="fas fa-file-alt"></i> Télécharger mon CV</a>
-        </div>
-    </div>
-</section>
-
 <section>
     <h2>À propos de moi</h2>
     <div class="about-container">
@@ -21,35 +9,49 @@ layout: default
             <p>Passionné par l'informatique et les nouvelles technologies, je développe mes compétences en administration réseau, systèmes virtualisés et sécurité informatique.</p>
             <p>Je recherche actuellement un stage pour la période du 2 juin au 5 juillet inclus pour mettre en pratique mes connaissances dans un environnement professionnel.</p>
         </div>
-        <div class="skills-preview">
-            <h3>Quelques compétences</h3>
-            <div class="skill-bars">
-                <div class="skill">
-                    <span>Virtualisation (VirtualBox)</span>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Réseaux (Cisco Packet Tracer)</span>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>HTML/CSS</span>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Python</span>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 70%;"></div>
-                    </div>
-                </div>
+        <a href="static/CV_2025-20-05_Arthur_Perez.pdf" class="btn-small" target="_blank"><i class="fas fa-file-alt"></i> Télécharger mon CV</a>
+    </div>
+</section>
+
+<section>
+    <h2>Mes Projets</h2>
+    <p class="intro">Découvrez ci-dessous une sélection de projets que j'ai réalisés durant ma formation en BTS SIO SISR.</p>
+    
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-server"></i>
             </div>
-            <a href="static/CV_2025-20-05_Arthur_Perez.pdf" class="btn-small" target="_blank"><i class="fas fa-file-alt"></i> Télécharger mon CV</a>
+            <div class="project-content">
+                <h3>Mise en place d'un environnement Windows GLPI</h3>
+                <p>Configuration d'un environnement Windows dans une VM avec la création d'utilisateurs, de groupes et de la résolution d'incident.</p>
+                <p class="project-tags">Windows • Active Directory</p>
+                <a href="#" class="btn-small">Voir le projet <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="project-content">
+                <h3>Architecture réseau virtualisée</h3>
+                <p>Conception et implémentation d'une architecture réseau complète sous Cisco Packet Tracer avec routage, VLANs et sécurité.</p>
+                <p class="project-tags">Cisco Packet Tracer • VLAN • Routage</p>
+                <a href="#" class="btn-small">Voir le projet <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-img">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="project-content">
+                <h3>Modernisation fictif du SI du Louvre</h3>
+                <p>Restructuration du Louvre.</p>
+                <p class="project-tags">Analyse des besoins • Cisco Packet Tracer • Diagram de gantt</p>
+                <a href="#" class="btn-small">Voir le projet <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </div>
 </section>
