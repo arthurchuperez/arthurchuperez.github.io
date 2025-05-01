@@ -1,0 +1,33 @@
+#contact {
+    padding: 0px 20px 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    container-type: inline-size;
+}
+
+.contact-icon {
+    font-size: 2em;
+    color: #8a2be2;
+    margin-bottom: 10px;
+}
+
+@container (max-width: 240px) {
+    .contact-item .mail {
+        margin-left: -8px;
+    }
+}
