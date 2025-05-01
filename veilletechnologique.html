@@ -1,70 +1,65 @@
 ---
+layout: default
 ---
-{% include head.html %}
-<body>
-    {% include header.html %}
-
-    <section id="veille">
-        <h2>Veille Technologique</h2>
-        <p class="intro">Dans le cadre de mon BTS SIO, je réalise une veille technologique sur différents sujets liés à l'informatique et à la sécurité. Voici ma dernière analyse</p>
+<section id="veille">
+    <h2>Veille Technologique</h2>
+    <p class="intro">Dans le cadre de mon BTS SIO, je réalise une veille technologique sur différents sujets liés à l'informatique et à la sécurité. Voici ma dernière analyse</p>
+    
+    <div class="veille-article">
+        <h3>L'authentification sans mot de passe (Passkeys & MFA avancé)</h3>
+        <div class="veille-date">Mars 2025</div>
         
-        <div class="veille-article">
-            <h3>L'authentification sans mot de passe (Passkeys & MFA avancé)</h3>
-            <div class="veille-date">Mars 2025</div>
-            
-            <div class="veille-section">
-                <h4>Introduction</h4>
-                <p>L'authentification sans mot de passe devient une alternative de plus en plus adoptée pour renforcer la sécurité des comptes utilisateurs tout en améliorant l'expérience utilisateur.</p>
-                <p>Cette approche permet de se passer des mots de passe, souvent vulnérables aux attaques (phishing, brute force, etc.), en les remplaçant par des méthodes plus sécurisées comme les Passkeys dans le cadre d'une authentification multi-facteurs avancée (MFA).</p>
-            </div>
-            
-            <div class="veille-section">
-                <h4>1. Qu'est-ce que l'authentification sans mot de passe ?</h4>
-                <p>L'authentification sans mot de passe repose sur des méthodes qui ne nécessitent pas de saisir un mot de passe classique. Elle utilise des technologies comme :</p>
-                <ul>
-                    <li><strong>Les Passkeys</strong> : solution développée par Apple, Google et Microsoft basée sur la cryptographie à clé publique</li>
-                    <li><strong>Les clés de sécurité matérielles</strong> : offrent une authentification forte comme YubiKey ou Google Titan</li>
-                    <li><strong>La biométrie</strong> : empreinte digitale, reconnaissance faciale</li>
-                    <li><strong>Les applications d'authentification</strong> : Microsoft Authenticator, Google Authenticator</li>
-                </ul>
-            </div>
-            
-            <div class="veille-section">
-                <h4>2. Avantages de l'authentification sans mot de passe</h4>
-                <ul>
-                    <li><strong>Sécurité renforcée</strong> : réduction des risques de phishing, attaques par dictionnaire et fuites de données</li>
-                    <li><strong>Expérience utilisateur améliorée</strong> : plus besoin de retenir ou de gérer plusieurs mots de passe</li>
-                    <li><strong>Interopérabilité</strong> : compatible avec de nombreux services et appareils</li>
-                </ul>
-            </div>
-            
-            <div class="veille-section">
-                <h4>3. Focus sur les Passkeys</h4>
-                <p>Les Passkeys sont une évolution récente qui repose sur la cryptographie asymétrique.</p>
-                <p>Elles permettent de s'authentifier via un appareil de confiance (smartphone, ordinateur) sans nécessiter de mot de passe.</p>
-                <ul>
-                    <li><strong>Fonctionnement</strong> : un couple de clés (privée et publique) est généré. La clé privée reste sur l'appareil tandis que la clé publique est stockée sur le serveur du service utilisé</li>
-                    <li><strong>Compatibilité</strong> : intégré dans les écosystèmes Apple (iOS/macOS), Google (Android/Chrome) et Microsoft.</li>
-                    <li><strong>Sécurité</strong> : immunisé contre le phishing car aucune donnée secrète n'est transmise.</li>
-                </ul>
-            </div>
-            
-            <div class="veille-section">
-                <h4>4. Déploiement et adoption</h4>
-                <ul>
-                    <li><strong>Entreprises</strong> : de plus en plus d'organisations intègrent ces technologies pour renforcer la sécurité de leurs employés</li>
-                    <li><strong>Normes et régulations</strong> : soutenu par des organismes comme la FIDO Alliance et le W3C</li>
-                    <li><strong>Limites actuelles</strong> : nécessité d'une adoption généralisée et compatible avec les anciens systèmes</li>
-                </ul>
-            </div>
-            
-            <div class="veille-section">
-                <h4>Conclusion</h4>
-                <p>L'authentification sans mot de passe représente l'avenir de la sécurité numérique.</p>
-                <p>Avec des technologies comme les Passkeys et l'authentification multi-facteurs avancée, les entreprises et les utilisateurs bénéficient d'une meilleure protection contre les cybermenaces.</p>
-                <p>Cependant, une adoption massive et une compatibilité accrue sont encore nécessaires pour une transition complète vers un monde sans mot de passe.</p>
-            </div>
+        <div class="veille-section">
+            <h4>Introduction</h4>
+            <p>L'authentification sans mot de passe devient une alternative de plus en plus adoptée pour renforcer la sécurité des comptes utilisateurs tout en améliorant l'expérience utilisateur.</p>
+            <p>Cette approche permet de se passer des mots de passe, souvent vulnérables aux attaques (phishing, brute force, etc.), en les remplaçant par des méthodes plus sécurisées comme les Passkeys dans le cadre d'une authentification multi-facteurs avancée (MFA).</p>
         </div>
-    </section>
-</body>
-</html>
+        
+        <div class="veille-section">
+            <h4>1. Qu'est-ce que l'authentification sans mot de passe ?</h4>
+            <p>L'authentification sans mot de passe repose sur des méthodes qui ne nécessitent pas de saisir un mot de passe classique. Elle utilise des technologies comme :</p>
+            <ul>
+                <li><strong>Les Passkeys</strong> : solution développée par Apple, Google et Microsoft basée sur la cryptographie à clé publique</li>
+                <li><strong>Les clés de sécurité matérielles</strong> : offrent une authentification forte comme YubiKey ou Google Titan</li>
+                <li><strong>La biométrie</strong> : empreinte digitale, reconnaissance faciale</li>
+                <li><strong>Les applications d'authentification</strong> : Microsoft Authenticator, Google Authenticator</li>
+            </ul>
+        </div>
+        
+        <div class="veille-section">
+            <h4>2. Avantages de l'authentification sans mot de passe</h4>
+            <ul>
+                <li><strong>Sécurité renforcée</strong> : réduction des risques de phishing, attaques par dictionnaire et fuites de données</li>
+                <li><strong>Expérience utilisateur améliorée</strong> : plus besoin de retenir ou de gérer plusieurs mots de passe</li>
+                <li><strong>Interopérabilité</strong> : compatible avec de nombreux services et appareils</li>
+            </ul>
+        </div>
+        
+        <div class="veille-section">
+            <h4>3. Focus sur les Passkeys</h4>
+            <p>Les Passkeys sont une évolution récente qui repose sur la cryptographie asymétrique.</p>
+            <p>Elles permettent de s'authentifier via un appareil de confiance (smartphone, ordinateur) sans nécessiter de mot de passe.</p>
+            <ul>
+                <li><strong>Fonctionnement</strong> : un couple de clés (privée et publique) est généré. La clé privée reste sur l'appareil tandis que la clé publique est stockée sur le serveur du service utilisé</li>
+                <li><strong>Compatibilité</strong> : intégré dans les écosystèmes Apple (iOS/macOS), Google (Android/Chrome) et Microsoft.</li>
+                <li><strong>Sécurité</strong> : immunisé contre le phishing car aucune donnée secrète n'est transmise.</li>
+            </ul>
+        </div>
+        
+        <div class="veille-section">
+            <h4>4. Déploiement et adoption</h4>
+            <ul>
+                <li><strong>Entreprises</strong> : de plus en plus d'organisations intègrent ces technologies pour renforcer la sécurité de leurs employés</li>
+                <li><strong>Normes et régulations</strong> : soutenu par des organismes comme la FIDO Alliance et le W3C</li>
+                <li><strong>Limites actuelles</strong> : nécessité d'une adoption généralisée et compatible avec les anciens systèmes</li>
+            </ul>
+        </div>
+        
+        <div class="veille-section">
+            <h4>Conclusion</h4>
+            <p>L'authentification sans mot de passe représente l'avenir de la sécurité numérique.</p>
+            <p>Avec des technologies comme les Passkeys et l'authentification multi-facteurs avancée, les entreprises et les utilisateurs bénéficient d'une meilleure protection contre les cybermenaces.</p>
+            <p>Cependant, une adoption massive et une compatibilité accrue sont encore nécessaires pour une transition complète vers un monde sans mot de passe.</p>
+        </div>
+    </div>
+</section>
