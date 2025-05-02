@@ -63,6 +63,7 @@
 .project-content h3 {
     margin-top: 0;
     color: #333;
+    height: 65px;
 }
 
 .project-footer {
@@ -72,4 +73,6 @@
 
 .project-tags {
     font-style: italic;
+    height: 55px;
+    margin: 0px;
 }
