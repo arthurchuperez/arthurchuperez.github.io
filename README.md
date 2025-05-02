@@ -95,3 +95,76 @@ Le résultat de la compilation sera ceci.
     </body>
 </html>
 ```
+
+
+# Setup local
+
+## Installer WSL
+
+Ouvrir le `Terminal` Windows et installer WSL qui permet d'avoir un environnement Linux sous Windows.
+
+Cela installera Ubuntu par défaut. Redémarrer le PC si nécessaire.
+
+```cmd
+wsl --install
+```
+
+## Installer Ruby dans Ubuntu
+
+Ouvrir Ubuntu dans le `Terminal` Windows.
+
+![ubuntu](_docs/terminal_ubuntu.png)
+
+Installer les composants Ruby qui permettent de lancer Jekyll.
+
+```bash
+sudo apt update
+sudo apt install -y ruby-full build-essential zlib1g-dev
+```
+
+Ouvrir le fichier `~/.bashrc` avec l'éditeur de texte `nano` pour le modifier.
+
+```bash
+nano ~/.bashrc
+```
+
+Coller les lignes suivantes à la fin du fichier.
+
+```
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+```
+
+Sauvegarder et quitter en faisant `CTRL+X`.
+
+Recharger le fichier
+
+```bash
+source ~/.bashrc
+```
+
+## Installer et lancer Jekyll dans Ubuntu
+
+```bash
+gem install jekyll bundler
+```
+
+Dans Ubuntu, le lecteur `C:\` est accessible depuis le dossier `/mnt/c`.
+
+Se placer dans le dossier du projet, par exemple.
+
+```bash
+cd /mnt/c/Projects/arthurchuperez.github.io
+```
+
+Lancer Jekkyll
+
+```bash
+bundle exec jekyll serve --livereload --force-polling
+```
+
+![jekyll](_docs/jekyll.png)
+
+Le site est alors accessible à l'adresse [http://127.0.0.1:4000/index.html](http://127.0.0.1:4000/index.html) et devrait être compilé à la volée à chaque changement de fichier.
+
+Parfois il faut forcer le rafraîchissement avec F5.
