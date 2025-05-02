@@ -165,6 +165,6 @@ bundle exec jekyll serve --livereload --force-polling
 
 ![jekyll](_docs/jekyll.png)
 
-Le site est alors accessible à l'adresse [http://127.0.0.1:4000/index.html](http://127.0.0.1:4000/index.html) et devrait être compilé à la volée à chaque changement de fichier.
+Le site est alors accessible à l'adresse [http://127.0.0.1:4000](http://127.0.0.1:4000) et devrait être compilé à la volée à chaque changement de fichier.
 
 Parfois il faut forcer le rafraîchissement avec F5.
