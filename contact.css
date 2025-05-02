@@ -23,8 +23,10 @@ main {
     margin-bottom: 10px;
 }
 
-@container (max-width: 240px) {
-    .contact-item .mail {
-        margin-left: -8px;
-    }
+.contact-mail {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: normal;
 }

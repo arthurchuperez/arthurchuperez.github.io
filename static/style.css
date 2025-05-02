@@ -169,7 +169,7 @@ main {
 
 .btn-small {
     display: inline-block;
-    background-color: transparent;
+    background-color: white;
     color: #8a2be2;
     padding: 8px 15px;
     text-decoration: none;
@@ -177,6 +177,7 @@ main {
     border-radius: 20px;
     font-weight: bold;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn-small:hover {
