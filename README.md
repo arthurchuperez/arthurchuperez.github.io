@@ -5,7 +5,7 @@ Ce site [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-git
 
 [Liquid API and references](https://shopify.dev/docs/api/liquid).
 
-# Architecture du code
+# Syntaxe Liquid utilisée
 
 ## Les modèles
 
