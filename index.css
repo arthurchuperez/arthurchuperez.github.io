@@ -15,13 +15,6 @@
     margin-top: 40px;
 }
 
-.project-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    margin: 0px;
-}
-
 .project-card {
     background-color: white;
     border-radius: 10px;
@@ -33,6 +26,9 @@
     height: 100%;
     gap: 1.2rem;
     padding-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+    margin: 0px;
 }
 
 .project-card:hover {
@@ -40,39 +36,55 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.project-img {
-    height: 200px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    color: #8a2be2;
+.project-title,
+.project-description,
+.project-tags {
+    padding: 0px 20px;
 }
 
-.project-img img {
+.project-img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: fill;
 }
 
-.project-content {
-    padding: 0px 20px;
-}
-
-.project-content h3 {
-    margin-top: 0;
-    color: #333;
-    height: 65px;
-}
-
-.project-footer {
-    padding: 0px 20px;
-    margin-top: auto;
+.project-title {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .project-tags {
     font-style: italic;
-    height: 55px;
-    margin: 0px;
+    color: gray;
+}
+
+/* Hauteurs fixes pour alignement sur écran large */
+@media (min-width: 768px) {
+    .project-title {
+        font-weight: bold;
+        height: 56px;
+        overflow: hidden;
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+        height: 72px;
+        overflow: hidden;
+    }
+
+    .project-tags {
+        height: 56px;
+        overflow: hidden;
+    }
+}
+
+/* Comportement naturel (sans hauteur fixe) sur mobile */
+@media (max-width: 767px) {
+
+    .project-title,
+    .project-description,
+    .project-tags {
+        height: auto;
+        overflow: visible;
+    }
 }
