@@ -9,9 +9,9 @@ Ce site [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-git
 
 ## Les modèles
 
-Le dossier `_layouts` contient les modèles utilisés dans les pages du site.
+Le dossier `_layouts`  contient les modèles (ou templates) utilisés pour structurer les pages du site.
 
-Exemple de modèle
+Exemple de modèle :
 
 ```html
 <!DOCTYPE html>
@@ -33,11 +33,9 @@ Exemple de modèle
 </html>
 ```
 
-La balise `{{ content }}` permet d'indiquer où insérer le contenu de la page en cours de compilation.
+La balise `{{ content }}` indique à Jekyll l'endroit où insérer le contenu spécifique de chaque page lors de la génération du site.
 
-## Les pages
-
-Pour qu'une page utilise un modèle, il faut l'indiquer en premier dans la page comme ceci.
+Pour qu'une page utilise un modèle, il faut le spécifier tout en haut de la page de cette façon :
 
 ```
 ---
@@ -45,21 +43,36 @@ layout: default
 ---
 ```
 
+Cela indique à Jekyll qu'il doit utiliser le fichier `_layouts/default.html` comme modèle pour cette page.
 
-Ici, Jekyll comprend alors qu'il doit aller chercher le fichier `_layouts/default.html`
 
+## Les variables
+
+Le fichier `_config.yml` peut contenir des variables utilisables dans les pages du site.
+
+```yaml
+# Welcome to Jekyll!
+
+cv_url: /assets/docs/CV_Arthur_PEREZ.pdf
+```
+
+Ici, nous avons défini une variable nommée `cv_url`. Pour l'utiliser dans une page, il suffit d'écrire `{{ site.cv_url }}`.
+
+```html
+<a href="{{ site.cv_url }}">Curriculum Vitae</a>
+```
 
 # Compilation d'une page
 
-Lorsque Jekyll compile la page, il :
-1. Lit le modèle `_layouts/default.html`
-2. Écrit le début du modèle jusqu'à la balise `{{ content }}`
-3. Écrit le contenu de la page
-4. Écrit la fin du modèle qui est après la balise `{{ content }}`
+Lors de la compilation d'une page, Jekyll suit ces étapes :
+- Il lit le modèle défini dans `_layouts/default.html`
+- Il écrit tout le contenu du modèle jusqu'à la balise `{{ content }}`
+- Il insère ensuite le contenu de la page
+- Enfin, il complète avec le reste du modèle après la balise `{{ content }}`
 
 ## Exemple de compilation
 
-Prenons l'exemple de modèle ci-dessus pour l'utiliser avec cette page.
+Reprenons l'exemple de modèle ci-dessus pour l'utiliser avec une page qui exploite également la variable `cv_url` que nous avons définie précédemment.
 
 ```html
 ---
@@ -68,10 +81,11 @@ layout: default
 <section id="contact">
     <h2>Contactez-moi</h2>
     <p class="intro">Je suis ouvert à toute opportunité de stage, question ou collaboration.<br/>N'hésitez pas à me contacter !</p>
+    <a href="{{ site.cv_url }}">Curriculum Vitae</a>
 </section>
 ```
 
-Le résultat de la compilation sera ceci.
+Le résultat de la compilation donnera le rendu suivant.
 
 ```html
 <!DOCTYPE html>
@@ -89,6 +103,7 @@ Le résultat de la compilation sera ceci.
         <section id="contact">
             <h2>Contactez-moi</h2>
             <p class="intro">Je suis ouvert à toute opportunité de stage, question ou collaboration.<br/>N'hésitez pas à me contacter !</p>
+            <a href="/assets/docs/CV_Arthur_PEREZ.pdf">Curriculum Vitae</a>
         </section>
         
         ...
@@ -101,9 +116,9 @@ Le résultat de la compilation sera ceci.
 
 ## Installer WSL
 
-Ouvrir le `Terminal` Windows et installer WSL qui permet d'avoir un environnement Linux sous Windows.
+Ouvrez le `Terminal` sous Windows et installez WSL, qui permet d'exécuter un environnement Linux directement sur Windows.
 
-Cela installera Ubuntu par défaut. Redémarrer le PC si nécessaire.
+Par défaut, cela installera Ubuntu. Pensez à redémarrer votre PC si cela est demandé.
 
 ```cmd
 wsl --install
@@ -111,33 +126,33 @@ wsl --install
 
 ## Installer Ruby dans Ubuntu
 
-Ouvrir Ubuntu dans le `Terminal` Windows.
+Lancez Ubuntu depuis le `Terminal` Windows.
 
 ![ubuntu](_docs/terminal_ubuntu.png)
 
-Installer les composants Ruby qui permettent de lancer Jekyll.
+Ensuite, installez les composants Ruby nécessaires pour pouvoir exécuter Jekyll.
 
 ```bash
 sudo apt update
 sudo apt install -y ruby-full build-essential zlib1g-dev
 ```
 
-Ouvrir le fichier `~/.bashrc` avec l'éditeur de texte `nano` pour le modifier.
+Ouvrez le fichier `~/.bashrc` à l'aide de l'éditeur de texte `nano` pour y apporter des modifications :
 
 ```bash
 nano ~/.bashrc
 ```
 
-Coller les lignes suivantes à la fin du fichier.
+Collez les lignes suivantes à la fin du fichier `~/.bashrc` :
 
 ```
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 ```
 
-Sauvegarder et quitter en faisant `CTRL+X`.
+Sauvegardez et quittez en appuyant sur `CTRL+X`, puis validez avec O (ou Y) et Entrée.
 
-Recharger le fichier
+Ensuite, rechargez le fichier avec la commande suivante :
 
 ```bash
 source ~/.bashrc
@@ -149,15 +164,15 @@ source ~/.bashrc
 gem install jekyll bundler
 ```
 
-Dans Ubuntu, le lecteur `C:\` est accessible depuis le dossier `/mnt/c`.
+Sous Ubuntu, le lecteur `C:\` est accessible via le chemin `/mnt/c`.
 
-Se placer dans le dossier du projet, par exemple.
+Pour vous rendre dans le dossier de votre projet, utilisez une commande comme celle-ci :
 
 ```bash
 cd /mnt/c/Projects/arthurchuperez.github.io
 ```
 
-Lancer Jekkyll
+Pour lancer Jekyll dans le dossier de votre projet, utilisez la commande suivante :
 
 ```bash
 bundle exec jekyll serve --livereload --force-polling
@@ -165,6 +180,29 @@ bundle exec jekyll serve --livereload --force-polling
 
 ![jekyll](_docs/jekyll.png)
 
-Le site est alors accessible à l'adresse [http://127.0.0.1:4000](http://127.0.0.1:4000) et devrait être compilé à la volée à chaque changement de fichier.
+Le site est alors accessible à l'adresse [http://127.0.0.1:4000](http://127.0.0.1:4000) et devrait se recompiler automatiquement à chaque modification de fichier.
 
-Parfois il faut forcer le rafraîchissement avec F5.
+Si les changements ne s'affichent pas immédiatement, il peut être nécessaire de forcer le rafraîchissement du navigateur avec la touche `F5`.
+
+
+# Lexique
+
+| Terme / Concept             | Définition
+|-|-
+| GitHub Pages                | Service gratuit de GitHub pour héberger un site web statique (HTML, CSS, JS).
+| Jekyll                      | Générateur de site statique : transforme des fichiers Markdown/HTML en site web complet.
+| Liquid                      | Langage de template utilisé par Jekyll pour insérer du contenu dynamique (ex. `{{ variable }}`).
+| `_layouts`                  | Dossier contenant les modèles de pages (templates HTML) utilisés par le site.
+| `_config.yml`               | Fichier de configuration de Jekyll : permet de définir des options et des variables globales.
+| `{{ content }}`             | Balise spéciale de Liquid : insère ici le contenu propre à chaque page lors de la compilation.
+| `{{ site.nom_variable }}`   | Syntaxe Liquid pour accéder à une variable définie dans `_config.yml`.
+| `layout: default`           | Instruction dans l'en-tête d'une page Jekyll pour indiquer quel modèle (template) utiliser.
+| WSL (Windows Subsystem for Linux) | Outil qui permet de faire tourner un système Linux (ex. Ubuntu) dans Windows.
+| `sudo`                      | Commande utilisée pour exécuter une action en tant qu’administrateur (super utilisateur).
+| `apt`                       | Outil de gestion de paquets sous Ubuntu/Debian pour installer, mettre à jour ou supprimer des logiciels.
+| `nano`                      | Éditeur de texte dans le terminal Linux utilisé pour modifier des fichiers texte.
+| `.bashrc`                   | Fichier de configuration du terminal Bash : permet de définir des variables d'environnement.
+| `export`                    | Commande qui permet de définir une variable d’environnement accessible dans le terminal et ses sous-processus.
+| `GEM_HOME`, `PATH`          | Variables d'environnement utilisées pour gérer les paquets Ruby localement.
+| `source [FICHIER]`          | Commande qui recharge un fichier de configuration dans le terminal actuel sans redémarrer le shell.
+| `/mnt/c/...`                | Emplacement des fichiers Windows dans l'environnement Linux (via WSL).
