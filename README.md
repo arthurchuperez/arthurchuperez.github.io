@@ -198,11 +198,11 @@ Si les changements ne s'affichent pas immédiatement, il peut être nécessaire 
 | `{{ site.nom_variable }}`   | Syntaxe Liquid pour accéder à une variable définie dans `_config.yml`.
 | `layout: default`           | Instruction dans l'en-tête d'une page Jekyll pour indiquer quel modèle (template) utiliser.
 | WSL (Windows Subsystem for Linux) | Outil qui permet de faire tourner un système Linux (ex. Ubuntu) dans Windows.
-| `sudo`                      | Commande utilisée pour exécuter une action en tant qu’administrateur (super utilisateur).
+| `sudo`                      | Commande utilisée pour exécuter une action en tant qu'administrateur (super utilisateur).
 | `apt`                       | Outil de gestion de paquets sous Ubuntu/Debian pour installer, mettre à jour ou supprimer des logiciels.
-| `nano`                      | Éditeur de texte dans le terminal Linux utilisé pour modifier des fichiers texte.
+| `nano`                      | Éditeur de texte dans le terminal Linux.
 | `.bashrc`                   | Fichier de configuration du terminal Bash : permet de définir des variables d'environnement.
-| `export`                    | Commande qui permet de définir une variable d’environnement accessible dans le terminal et ses sous-processus.
+| `export`                    | Commande qui permet de définir une variable d'environnement accessible dans le terminal et ses sous-processus.
 | `GEM_HOME`, `PATH`          | Variables d'environnement utilisées pour gérer les paquets Ruby localement.
 | `source [FICHIER]`          | Commande qui recharge un fichier de configuration dans le terminal actuel sans redémarrer le shell.
 | `/mnt/c/...`                | Emplacement des fichiers Windows dans l'environnement Linux (via WSL).
